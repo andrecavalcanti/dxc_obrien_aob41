@@ -7,6 +7,9 @@ xmlport 50012 "DXCExportPaymentJournal"
 
     FieldSeparator = '|';
     Format = VariableText;
+    
+    CaptionML = ENU= 'DXC Export Payment Journal', 
+                ENC='DXC Export Payment Journal';
 
     schema
     {

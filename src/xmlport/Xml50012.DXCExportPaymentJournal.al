@@ -35,7 +35,10 @@ xmlport 50012 "DXCExportPaymentJournal"
 
                         case Vendor."Country/Region Code"  of
                           '','USA': Country := 'US';
-                          'CA','CAN' : Country := 'Canada';
+                          // >> AOB-41
+                          // M 'CA','CAN' : Country := 'Canada';
+                          'CA','CAN' : Country := 'CA';
+                          // << AOB-41
                           else begin
                             CountryRec.GET(Vendor."Country/Region Code");
                             Country := CountryRec.Name;
@@ -57,13 +60,19 @@ xmlport 50012 "DXCExportPaymentJournal"
                         if VendorLedger.FINDFIRST then begin   // Added BEGIN
                           InvoiceDescription := VendorLedger.Description;
                           InvoiceNumber := COPYSTR(VendorLedger."External Document No.",1,17);    // #Eclipse - Limited the Invoice Number to 17 characters
+                            // >> AOB-41
+                            PostingDate := FORMAT(VendorLedger."Posting Date",0,'<Month,2>/<Day,2>/<Year4>');
+                            // << AOB-41
                         end;
                         // END Change
                         // UXCEclipse SB - Added Date Format
-                        PostingDate := FORMAT("Gen. Journal Line"."Posting Date",0,'<Month,2>/<Day,2>/<Year4>');
+                        // >> AOB-41
+                        // PostingDate := FORMAT("Gen. Journal Line"."Posting Date",0,'<Month,2>/<Day,2>/<Year4>');
+                        // << AOB-41
                         // END;
-
-                        DiscountAmount := FORMAT(VendorLedger."Remaining Pmt. Disc. Possible");
+                        // >> AOB-41
+                        // M DiscountAmount := FORMAT(VendorLedger."Remaining Pmt. Disc. Possible");
+                        // << AOB-41
                         NetAmount := FORMAT("Gen. Journal Line".Amount,0,1);
 
                         BankAccount.GET("Gen. Journal Line"."Bal. Account No.");

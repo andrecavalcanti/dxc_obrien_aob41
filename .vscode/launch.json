@@ -5,14 +5,25 @@
             "type": "al",
             "request": "launch",            
             "name": "Your own server",
-            "server": "http://localhost",                    
-            "serverInstance": "NAV2018_CU8_NA",
-            "port"  : 7049, 
-            "authentication": "Windows",
+            // ---- Docker---
+            "server": "http://172.17.189.18", 
+            "serverInstance": "NAV",                   
+            "port"  : 7049,
+            "authentication":"UserPassword",   
+            // --- DEV ---         
+            // "server": "http://172.19.2.41",                    
+            // "serverInstance": "TPM-DEV",
+            // "port"  : 7059,
+            // "authentication": "Windows",   
+            // --- TEST ---
+            // "server": "http://172.19.2.41", 
+            //  "serverInstance": "DynamicsNAV110",         
+            //  "port"  : 7049,
+            // "authentication": "Windows",            
             //"tenant": "default",
             //"startupObjectId": 22,
            "schemaUpdateMode": "Synchronize"
-           //"schemaUpdateMode": "Recreate"
+            // "schemaUpdateMode": "Recreate"
             //"startupObjectType": "Page",
             //"breakOnError": true
         }

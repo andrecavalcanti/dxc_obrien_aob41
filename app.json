@@ -2,8 +2,8 @@
   "id": "c411c2da-ddd9-46cc-8641-24fd27c80832",
   "name": "DXC Bottom Line Payment Export",
   "publisher": "DXC",
-  "brief": "",
-  "description": "",
+  "brief": "AOB-41",
+  "description": "Update - 06-07-19",
   "version": "1.0.0.0",
   "compatibilityId": "1.0.0.0",
   "privacyStatement": "",
@@ -19,5 +19,9 @@
   "idRange": {
     "from": 50000,
     "to": 50149
-  }
+  },
+   "target": "Internal",
+  "showMyCode": true,
+  "breakonerror" : true,
+  "runtime": "1.0"
 }

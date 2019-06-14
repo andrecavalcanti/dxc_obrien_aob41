@@ -72,6 +72,7 @@ xmlport 50012 "DXCExportPaymentJournal"
                         // END;
                         // >> AOB-41
                         // M DiscountAmount := FORMAT(VendorLedger."Remaining Pmt. Disc. Possible");
+                        DiscountAmount := '0';
                         // << AOB-41
                         NetAmount := FORMAT("Gen. Journal Line".Amount,0,1);
 

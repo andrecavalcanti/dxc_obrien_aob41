@@ -6,7 +6,7 @@
             "request": "launch",            
             "name": "Your own server",
             // ---- Docker---
-            "server": "http://172.17.189.18", 
+            "server": "http://172.28.5.191", 
             "serverInstance": "NAV",                   
             "port"  : 7049,
             "authentication":"UserPassword",   

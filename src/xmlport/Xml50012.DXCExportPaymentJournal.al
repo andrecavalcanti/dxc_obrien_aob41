@@ -36,8 +36,8 @@ xmlport 50012 "DXCExportPaymentJournal"
                         case Vendor."Country/Region Code"  of
                           '','USA': Country := 'US';
                           // >> AOB-41
-                          // M 'CA','CAN' : Country := 'Canada';
-                          'CA','CAN' : Country := 'CA';
+                          'CA','CAN' : Country := 'Canada';
+                          // 'CA','CAN' : Country := 'CA';
                           // << AOB-41
                           else begin
                             CountryRec.GET(Vendor."Country/Region Code");
@@ -61,7 +61,8 @@ xmlport 50012 "DXCExportPaymentJournal"
                           InvoiceDescription := VendorLedger.Description;
                           InvoiceNumber := COPYSTR(VendorLedger."External Document No.",1,17);    // #Eclipse - Limited the Invoice Number to 17 characters
                             // >> AOB-41
-                            PostingDate := FORMAT(VendorLedger."Posting Date",0,'<Month,2>/<Day,2>/<Year4>');
+                            // PostingDate := FORMAT(VendorLedger."Posting Date",0,'<Month,2>/<Day,2>/<Year4>');
+                            PostingDate := FORMAT(VendorLedger."Document Date",0,'<Month,2>/<Day,2>/<Year4>');
                             // << AOB-41
                         end;
                         // END Change

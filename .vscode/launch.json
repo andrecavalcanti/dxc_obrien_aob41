@@ -6,10 +6,10 @@
             "request": "launch",            
             "name": "Your own server",
             // ---- Docker---
-            "server": "http://172.28.5.191", 
-            "serverInstance": "NAV",                   
-            "port"  : 7049,
-            "authentication":"UserPassword",   
+            // "server": "http://172.28.5.191", 
+            // "serverInstance": "NAV",                   
+            // "port"  : 7049,
+            // "authentication":"UserPassword",   
             // --- DEV ---         
             // "server": "http://172.19.2.41",                    
             // "serverInstance": "TPM-DEV",
